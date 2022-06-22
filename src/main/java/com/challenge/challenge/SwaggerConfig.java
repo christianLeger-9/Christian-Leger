@@ -32,6 +32,6 @@ public class SwaggerConfig {
 	}
 
 	private Predicate<String> getPaths() {
-		return PathSelectors.regex("/.*");
+		return PathSelectors.regex("/WhatsApp/.*");
 		} 
 }
