@@ -1,15 +1,7 @@
 package com.challenge.challenge.controller;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.spec.InvalidKeySpecException;
-import java.util.Iterator;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
-import org.jose4j.lang.JoseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +15,6 @@ import com.challenge.challenge.repository.ContactoRepository;
 import com.challenge.challenge.service.ContactoService;
 import com.challenge.challenge.service.MensajeService;
 
-import nl.martijndwars.webpush.Notification;
-import nl.martijndwars.webpush.PushService;
-import nl.martijndwars.webpush.Subscription;
 
 @RestController
 @RequestMapping("/WhatsApp")

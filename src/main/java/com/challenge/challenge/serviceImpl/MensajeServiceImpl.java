@@ -14,7 +14,6 @@ import javax.annotation.PostConstruct;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.jose4j.lang.JoseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.challenge.challenge.entity.Contacto;
@@ -36,13 +35,10 @@ public class MensajeServiceImpl implements MensajeService {
 	@Autowired
 	MensajeRepository mensajeRepository;
 	
-	@Autowired
-	PushService pushService;
+	private PushService pushService;
 
-	@Value("${vapid.public.key}")
-	private String publicKey;
-	@Value("${vapid.private.key}")
-	private String privateKey;
+	private String publicKey = "BAG1Sd1OjTTuVbSTslZaSRZxJB3lWS8wBBXnWx_TDoDHg8M2HV40Vpv_3Qgkh9kBTiD6SGRj6VTiyBdGLrPNwFI";
+	private String privateKey = "V0uGsbT6SF4C86Vb1dtvXJyNv5urvWaSQvZR0J4Su0Q";
 	
 	@PostConstruct
 	private void init() throws GeneralSecurityException {
