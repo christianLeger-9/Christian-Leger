@@ -28,14 +28,12 @@ public class MensajeServiceImpl implements MensajeService {
 	}
 	
     private void sendNotifications(Long id) {
-	    System.out.println("Enviando notificación a todos los contactos del grupo");
-	    
 	    Iterable<Contacto> contactos = contactoRepository.findAll();
 		for (Iterator<Contacto> iterator = contactos.iterator(); iterator.hasNext();) {
 			Contacto c = (Contacto) iterator.next();
 			//Envio la notificacion a todos los contactos del grupo excluyendo al que lo envio
 			if (!c.getId().equals(id)) {
-				System.out.println(c.getNombre() + " " + c.getApellido() + " " + "Usted tiene un nuevo mensaje");
+				System.out.println(c.getNombre() + " " + c.getApellido() + " " + "Usted tiene un nuevo mensaje en el grupo");
 			}
 		}
     }
