@@ -1,12 +1,17 @@
 package com.challenge.challenge.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.challenge.challenge.entity.Mensajes;
@@ -26,14 +31,10 @@ public class WhatsAppControllerTest {
 	@Mock
 	private MensajeRepository mensajeRepositoryMock;
 	
-	@Autowired
-	WhatsAppController wsp = new WhatsAppController();
-	
 	@Test
 	void newMessageTest() {
-		
 		Mensajes m = new Mensajes(1L,"prueba unitaria del metodo del controller",4L);
-		Mockito.when(mensajeRepositoryMock.save(m)).thenReturn(m);
+		when(mensajeRepositoryMock.save(m)).thenReturn(m);
 		assertEquals(m, mensajeServiceMock.newMessage(m));
 		
 	}
