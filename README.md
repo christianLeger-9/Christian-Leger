@@ -2,11 +2,11 @@
 
 Descargando el repositorio:
 
--git clone https://github.com/christianLeger-9/coto
+-git clone https://github.com/christianLeger-9/challenge.git
 
 Para ejecutar la aplicacion utilizando Maven desde STS:
 
-clean install -DskipTests
+clean install
 
 Workflow:
 
@@ -20,7 +20,7 @@ Aclaraciones:
 
 Utilizar el branch Master para bajar el repo
 
-Se agregaron datos desde cotoAplicacion.java en el metodo loadData, se puede agregar mas de ser necesario para corroborar los porcentajes
+Se agregaron datos desde ChallengeApplication.java en el metodo loadData, se puede agregar mas de ser necesario.
 
-Se puede utilizar swagger para probar los endpoint con la siguiente url una vez levantado el proyecto, http://localhost:8080/swagger-ui.html#/fabrica-controller
+Se puede utilizar swagger para probar el endpoint con la siguiente url una vez levantado el proyecto,http://localhost:8090/swagger-ui.html#/whats-app-controller
 
