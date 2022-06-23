@@ -31,12 +31,12 @@ public class WhatsAppController {
 	
 	@RequestMapping("/newMessage")
     public ResponseEntity<?> newMessage(@RequestBody Mensajes m) {
-		boolean ok = false;
+		Mensajes mensaje = new Mensajes();
 		try {
 			Optional<Contacto> c = contactoService.findById(m.getIdContacto());
 			if (c.isPresent()) {
 				//Se guarda un nuevo mensaje y luego se envia la notificacion a cada contacto excluyendose el que lo envia.
-				ok = mensajeService.newMessage(m);
+				mensaje = mensajeService.newMessage(m);
 			} else {
 				throw new Exception("El idContacto no existe en la Base de Datos.");
 			}
@@ -44,6 +44,6 @@ public class WhatsAppController {
 		catch( Exception e) { 
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body((e.getMessage()));
 		 }
-		return new ResponseEntity<>(ok, HttpStatus.OK);
+		return new ResponseEntity<>(mensaje, HttpStatus.OK);
 	}
 }

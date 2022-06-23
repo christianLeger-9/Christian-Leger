@@ -6,8 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="contactos")
+@Table(name="mensaje")
 public class Mensajes {
 
 	@Id
@@ -18,36 +25,4 @@ public class Mensajes {
 	
 	private Long idContacto;
 	
-	public Mensajes(Long id,String mensaje,Long idContacto) {
-		this.id = id;
-		this.mensaje = mensaje;
-		this.idContacto = idContacto;
-	}
-	
-	public Mensajes() {
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
-
-	public Long getIdContacto() {
-		return idContacto;
-	}
-
-	public void setIdContacto(Long idContacto) {
-		this.idContacto = idContacto;
-	}
 }
