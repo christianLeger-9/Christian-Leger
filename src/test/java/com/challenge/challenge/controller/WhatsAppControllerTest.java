@@ -27,11 +27,8 @@ public class WhatsAppControllerTest {
 	
 	@Test
 	void newMessageTest() {
-		
 		Mensajes m = new Mensajes(1L,"prueba unitaria del metodo del controller",4L);
 		when(mensajeRepositoryMock.save(m)).thenReturn(m);
 		assertEquals(m, mensajeServiceMock.newMessage(m));
-		
 	}
-	
 }
