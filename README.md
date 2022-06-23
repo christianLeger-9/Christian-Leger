@@ -2,7 +2,7 @@
 
 Descargando el repositorio:
 
--git clone https://github.com/christianLeger-9/challenge.git
+-git clone https://github.com/christianLeger-9/Christian-Leger.git
 
 Para ejecutar la aplicacion utilizando Maven desde STS:
 
